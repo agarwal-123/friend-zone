@@ -51,7 +51,8 @@ export default function App() {
   };
 
   const handleUserDelete = (id) => {
-    setCardList((prev) => prev.filter((data) => data.id != id));
+    if (window.confirm("Delete user from your list ?"))
+      setCardList((prev) => prev.filter((data) => data.id != id));
   };
 
   const handleUserBookmark = (id) => {
