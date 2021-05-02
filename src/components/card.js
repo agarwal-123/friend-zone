@@ -36,7 +36,7 @@ const Wrapper = styled.div`
 `;
 export default function card({
   bookmarked,
-  name = "Raju Kumar",
+  name,
   handleUserDelete,
   id,
   handleUserBookmark,

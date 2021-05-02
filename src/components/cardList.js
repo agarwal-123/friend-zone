@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Card from "./card";
-// import InputBox from "./inputBox";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -13,13 +12,12 @@ const Wrapper = styled.div`
     color: grey;
   }
 
-  .circle{
-    border-radius:50%;
-
+  .circle {
+    border-radius: 50%;
   }
 
   .rotate {
-    -webkit-transform:rotate(180deg);
+    -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
@@ -44,10 +42,7 @@ export default function CardSection({
     setOffset((prev) => prev - 4);
   };
 
-  console.log(cardList);
-
   const handleUserSearch = (value) => {
-    // console.log(value.target.value);
     setSearchedList(
       cardList.filter((data) =>
         data.name.toLowerCase().includes(value.toLowerCase())
