@@ -29,7 +29,6 @@ const Wrapper = styled.div`
 
 export default function CardSection({
   searchedString,
-  keyPressed,
   cardList,
   handleUserBookmark,
   handleUserDelete,

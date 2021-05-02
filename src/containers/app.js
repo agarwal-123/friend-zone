@@ -40,7 +40,6 @@ const Wrapper = styled.div`
 
 export default function App() {
   const [searchedString, setSearchedString] = useState("");
-  const [keyPressed, setKeyPressed] = useState("");
   const [cardList, setCardList] = useState(cardsData);
   const handleUserAdd = (key) => {
     if (key == "Enter") {
@@ -98,7 +97,6 @@ export default function App() {
       </div>
       <CardList
         searchedString={searchedString}
-        keyPressed={keyPressed}
         cardList={cardList}
         handleUserDelete={handleUserDelete}
         handleUserBookmark={handleUserBookmark}
