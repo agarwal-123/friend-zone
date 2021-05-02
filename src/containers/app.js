@@ -43,11 +43,23 @@ export default function App() {
   const [keyPressed, setKeyPressed] = useState("");
   const [cardList, setCardList] = useState(cardsData);
   const handleUserAdd = (key) => {
-    if (key == "Enter")
-      setCardList((prev) => [
-        { name: searchedString, bookmarked: false, id: prev.length },
-        ...prev,
-      ]);
+    if (key == "Enter") {
+      if (/\d/.test(searchedString))
+        window.alert("Hey there ,Name can't contain number !!");
+      // check if same name exists
+      else if (
+        cardList.find(
+          (ele) => ele.name.toLowerCase() == searchedString.toLowerCase()
+        ) !== undefined
+      ) {
+        window.alert(`User ${searchedString} already exists !!`);
+      } else {
+        setCardList((prev) => [
+          { name: searchedString, bookmarked: false, id: prev.length },
+          ...prev,
+        ]);
+      }
+    }
   };
 
   const handleUserDelete = (id) => {
